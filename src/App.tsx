@@ -323,8 +323,8 @@ const Magazine = () => {
       <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl h-[60vh] sm:h-[70vh] md:h-[75vh] lg:h-[80vh] aspect-[4/5] relative">
         <HTMLFlipBook
           ref={flipBookRef}
-          width={450}
-          height={500}
+          width={420}
+          height={450}
           size="stretch"
           minWidth={400}
           maxWidth={800}
