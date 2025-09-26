@@ -34,29 +34,38 @@ interface PageData {
   };
 }
 
+interface FlipBookMethods {
+  flipPrev: () => void;
+  flipNext: () => void;
+}
+
+interface FlipBookRef {
+  pageFlip: () => FlipBookMethods;
+}
+
 // === Dữ liệu nội dung cho Tạp chí ===
-const magazineContent = {
+const magazineContent: { pages: PageData[] } = {
   pages: [
     // Trang Bìa
     {
-      type: 'cover',
+      type: 'cover' as const,
       title: 'CHỐNG THAM NHŨNG',
       subtitle: 'Xây dựng Nhà nước trong sạch, vững mạnh - Trách nhiệm của toàn dân',
       imageUrl: 'https://special.nhandan.vn/Chong-tham-nhung-tieu-cuc/assets/iS00rbsAQW/4ec68d45c0266e783737-2560x1440.jpg'
     },
     // Trang 1: Lời ngỏ
     {
-      type: 'page',
+      type: 'page' as const,
       title: 'Lời ngỏ',
       content: [
-        { type: 'paragraph', text: 'Phòng, chống tham nhũng là một nhiệm vụ trọng tâm, một cuộc đấu tranh gay go, phức tạp nhằm làm trong sạch bộ máy nhà nước, củng cố lòng tin của nhân dân và bảo vệ sự vững mạnh của chế độ.' },
-        { type: 'paragraph', text: 'Đây không chỉ là trách nhiệm của Đảng, Nhà nước mà còn là quyền và nghĩa vụ của mỗi công dân.' },
-        { type: 'paragraph', text: 'Ấn phẩm này sẽ hệ thống hóa các nội dung cốt lõi về tham nhũng, tác hại, và đặc biệt là vai trò, trách nhiệm của công dân theo tinh thần của pháp luật.' },
+        { type: 'paragraph' as const, text: 'Phòng, chống tham nhũng là một nhiệm vụ trọng tâm, một cuộc đấu tranh gay go, phức tạp nhằm làm trong sạch bộ máy nhà nước, củng cố lòng tin của nhân dân và bảo vệ sự vững mạnh của chế độ.' },
+        { type: 'paragraph' as const, text: 'Đây không chỉ là trách nhiệm của Đảng, Nhà nước mà còn là quyền và nghĩa vụ của mỗi công dân.' },
+        { type: 'paragraph' as const, text: 'Ấn phẩm này sẽ hệ thống hóa các nội dung cốt lõi về tham nhũng, tác hại, và đặc biệt là vai trò, trách nhiệm của công dân theo tinh thần của pháp luật.' },
       ]
     },
     // Trang 2-3: Khái niệm & Các hành vi tham nhũng
     {
-      type: 'spread',
+      type: 'spread' as const,
       left: {
         imageUrl: 'https://quocphongthudo.vn/upload/2001606/fck/haiyennguyen.qptd/tieu-chi-danh-gia-tham-nhung.jpg',
         caption: 'Tham nhũng - mối đe dọa từ bên trong bộ máy nhà nước.'
@@ -65,20 +74,20 @@ const magazineContent = {
         title: 'Khái niệm & Các hành vi tham nhũng',
         subtitle: 'Hiểu đúng và nhận diện kịp thời',
         content: [
-          { type: 'paragraph', text: '📌 Theo luật định, tham nhũng là hành vi của người có chức vụ, quyền hạn đã lợi dụng chức vụ, quyền hạn đó vì vụ lợi. Yếu tố cốt lõi là "lợi dụng quyền lực công để mưu cầu lợi ích riêng".' },
-          { type: 'paragraph', text: '📌 Các hành vi phổ biến: Tham ô tài sản, nhận hối lộ, lạm dụng chức vụ, đưa hối lộ, nhũng nhiễu... Luật quy định 12 hành vi tham nhũng cụ thể cần được giám sát chặt chẽ.' }
+          { type: 'paragraph' as const, text: '📌 Theo luật định, tham nhũng là hành vi của người có chức vụ, quyền hạn đã lợi dụng chức vụ, quyền hạn đó vì vụ lợi. Yếu tố cốt lõi là "lợi dụng quyền lực công để mưu cầu lợi ích riêng".' },
+          { type: 'paragraph' as const, text: '📌 Các hành vi phổ biến: Tham ô tài sản, nhận hối lộ, lạm dụng chức vụ, đưa hối lộ, nhũng nhiễu... Luật quy định 12 hành vi tham nhũng cụ thể cần được giám sát chặt chẽ.' }
         ]
       }
     },
     // Trang 4-5: Nguyên nhân của tham nhũng
     {
-      type: 'spread',
+      type: 'spread' as const,
       left: {
         title: 'Nguyên nhân của tham nhũng',
         subtitle: 'Từ khách quan đến chủ quan',
         content: [
-          { type: 'paragraph', text: '📌 Khách quan: Tác động từ mặt trái kinh tế thị trường; hệ thống chính sách, pháp luật thiếu đồng bộ; công tác quản lý nhà nước còn lỏng lẻo.' },
-          { type: 'paragraph', text: '📌 Chủ quan: Sự suy thoái về tư tưởng chính trị, đạo đức, lối sống của một bộ phận cán bộ, công chức; công tác quản lý, giáo dục cán bộ còn hạn chế.' }
+          { type: 'paragraph' as const, text: '📌 Khách quan: Tác động từ mặt trái kinh tế thị trường; hệ thống chính sách, pháp luật thiếu đồng bộ; công tác quản lý nhà nước còn lỏng lẻo.' },
+          { type: 'paragraph' as const, text: '📌 Chủ quan: Sự suy thoái về tư tưởng chính trị, đạo đức, lối sống của một bộ phận cán bộ, công chức; công tác quản lý, giáo dục cán bộ còn hạn chế.' }
         ]
       },
       right: {
@@ -88,7 +97,7 @@ const magazineContent = {
     },
     // Trang 6-7: Tác hại của tham nhũng
     {
-      type: 'spread',
+      type: 'spread' as const,
       left: {
         imageUrl: 'https://a.tcnn.vn/uploads/resources/truonghq/images/thamnhung12-5.jpg',
         caption: 'Tham nhũng làm xói mòn lòng tin và gây bất ổn xã hội.'
@@ -104,15 +113,15 @@ const magazineContent = {
         ]
       }
     },
-    // Trang 8-9: Vai trò của Đảng và Nhà nước 
+    // Trang 8-9: Vai trò của Đảng và Nhà nước
     {
-      type: 'spread',
+      type: 'spread' as const,
       left: {
         title: 'Vai trò của Đảng & Nhà nước',
         subtitle: 'Kiên quyết, không có vùng cấm',
         content: [
-          { type: 'paragraph', text: '📌 Đảng và Nhà nước ta xác định phòng, chống tham nhũng là "cuộc chiến chống giặc nội xâm", với tinh thần "không có vùng cấm, không có ngoại lệ".' },
-          { type: 'paragraph', text: '📌 Hàng loạt cơ chế, chính sách, pháp luật đã được ban hành và hoàn thiện, cùng với đó là sự chỉ đạo quyết liệt của Ban Chỉ đạo Trung ương về phòng, chống tham nhũng, tiêu cực, góp phần củng cố lòng tin của nhân dân.' }
+          { type: 'paragraph' as const, text: '📌 Đảng và Nhà nước ta xác định phòng, chống tham nhũng là "cuộc chiến chống giặc nội xâm", với tinh thần "không có vùng cấm, không có ngoại lệ".' },
+          { type: 'paragraph' as const, text: '📌 Hàng loạt cơ chế, chính sách, pháp luật đã được ban hành và hoàn thiện, cùng với đó là sự chỉ đạo quyết liệt của Ban Chỉ đạo Trung ương về phòng, chống tham nhũng, tiêu cực, góp phần củng cố lòng tin của nhân dân.' }
         ]
       },
       right: {
@@ -122,7 +131,7 @@ const magazineContent = {
     },
     // Trang 8-9: Trách nhiệm của công dân
     {
-      type: 'spread',
+      type: 'spread' as const,
       left: {
         title: 'Trách nhiệm của công dân',
         subtitle: 'Quyền và nghĩa vụ trong cuộc chiến chống tham nhũng',
@@ -141,7 +150,7 @@ const magazineContent = {
     },
     // Trang 10-11: Giá trị thực tiễn của sản phẩm
     {
-      type: 'spread',
+      type: 'spread' as const,
       left: {
         imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
         caption: 'Sản phẩm không chỉ là công cụ giáo dục mà còn góp phần xây dựng xã hội công bằng.'
@@ -160,7 +169,7 @@ const magazineContent = {
     },
     // Trang cuối
     {
-      type: 'back-cover',
+      type: 'back-cover' as const,
       quote: '"Phải nhốt quyền lực vào trong lồng cơ chế, luật pháp."',
       author: 'Tổng Bí thư Nguyễn Phú Trọng',
       credits: ''
@@ -194,7 +203,7 @@ const HeroSection = () => (
 // Component Magazine (Toàn bộ quyển tạp chí)
 const Magazine = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const flipBookRef = useRef<any>(null);
+  const flipBookRef = useRef<FlipBookRef>(null);
   const totalPages = magazineContent.pages.length;
 
   // Handle page flip
@@ -345,7 +354,7 @@ const Magazine = () => {
         >
           {magazineContent.pages.map((pageData, index) => (
             <div key={index} className="magazine-page">
-              {renderPageContent(pageData, index)}
+              {renderPageContent(pageData)}
             </div>
           ))}
         </HTMLFlipBook>
