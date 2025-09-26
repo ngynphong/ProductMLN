@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap');
+@import "tailwindcss";
+
+body {
+  font-family: 'Libre Baskerville', serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}

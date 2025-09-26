@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+/* Enhanced Magazine Flip Animation */
+.magazine-flipbook {
+  --flipbook-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  --flipbook-border-radius: 8px;
+  --flipbook-transition: all 0.3s ease;
+}
+
+.magazine-flipbook .magazine-page {
+  background: #F5F5DC;
+  border-radius: var(--flipbook-border-radius);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Page flip shadows and effects */
+.magazine-flipbook .stf__block {
+  box-shadow: var(--flipbook-shadow);
+}
+
+.magazine-flipbook .stf__item {
+  background: transparent;
+}
+
+/* Enhanced page corners for better interaction */
+.magazine-flipbook .stf__item--top .stf__inner {
+  background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, transparent 50%);
+}
+
+.magazine-flipbook .stf__item--bottom .stf__inner {
+  background: linear-gradient(45deg, transparent 50%, rgba(0,0,0,0.1) 100%);
+}
+
+/* Custom scrollbar for magazine */
+.magazine-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.magazine-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.magazine-scroll::-webkit-scrollbar-thumb {
+  background: #8B0000;
+  border-radius: 3px;
+}
+
+.magazine-scroll::-webkit-scrollbar-thumb:hover {
+  background: #B22222;
+}
+
+/* Navigation indicators enhancement */
+.magazine-flipbook .navigation-indicator {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Page content styling */
+.magazine-page {
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.magazine-page h1,
+.magazine-page h2,
+.magazine-page h3 {
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  font-weight: bold;
+}
+
+/* Enhanced image styling */
+.magazine-page img {
+  transition: var(--flipbook-transition);
+  border-radius: 6px;
+}
+
+.magazine-page img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Text content styling */
+.magazine-page .content-text {
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.magazine-page ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.magazine-page li {
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .magazine-flipbook {
+    --flipbook-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .magazine-page {
+    font-size: 0.9rem;
+  }
+}
+
+/* Loading animation for pages */
+.magazine-page {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced button styling */
+.magazine-flipbook + div button {
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+}
+
+.magazine-flipbook + div button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3);
+}
+
+.magazine-flipbook + div button:active {
+  transform: translateY(0);
+}
+
+/* Instructions overlay */
+.magazine-flipbook .instructions-overlay {
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
