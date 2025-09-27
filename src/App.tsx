@@ -151,6 +151,23 @@ const magazineContent: { pages: PageData[] } = {
     // Trang 10-11: Giá trị thực tiễn của sản phẩm
     {
       type: 'spread' as const,
+      right: {
+        imageUrl: 'https://sohoatailieu.com/wp-content/uploads/2022/09/202005181415365116-1e3d57003f0cfe2b63054e6384a03bc0.jpg',
+        caption: 'Sản phẩm không chỉ là công cụ giáo dục mà còn góp phần xây dựng xã hội công bằng.'
+      },
+      left: {
+        title: 'Giá trị thực tiễn của sản phẩm',
+        subtitle: 'Sản phẩm sáng tạo không chỉ là công cụ trình bày đẹp mắt, mà còn',
+        isList: true,
+        content: [
+          '📌 Phù hợp xu thế chuyển đổi số trong giáo dục và truyền thông.',
+          '📌 Tạo tương tác – trải nghiệm tốt hơn, nâng cao hiệu quả truyền đạt thông tin.',
+          '📌 Góp phần vào mục tiêu phát triển bền vững, giảm lãng phí giấy và bảo vệ môi trường.'
+        ]
+      }
+    },
+    {
+      type: 'spread' as const,
       left: {
         imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
         caption: 'Sản phẩm không chỉ là công cụ giáo dục mà còn góp phần xây dựng xã hội công bằng.'
@@ -160,10 +177,26 @@ const magazineContent: { pages: PageData[] } = {
         subtitle: 'Chuyển hóa lý luận thành ứng dụng thực tiễn',
         isList: true,
         content: [
-          'Giáo dục pháp luật: Công cụ truyền thông hiện đại, phổ biến kiến thức dễ tiếp cận, đổi mới phương pháp tuyên truyền sinh động.',
-          'Thúc đẩy quyền và trách nhiệm công dân: Trao quyền phát hiện/tố cáo, nâng cao ý thức và trách nhiệm xã hội.',
-          'Củng cố niềm tin xã hội: Làm rõ quyết tâm chính trị "không vùng cấm", tạo sức đề kháng xã hội chống tham nhũng.',
+          'Về chính trị: Góp phần giữ vững vai trò lãnh đạo của Đảng, củng cố niềm tin của nhân dân vào Nhà nước. Bảo vệ Hiến pháp, pháp luật, nâng cao hiệu lực quản lý nhà nước.',
+          'Về kinh tế: Giảm thất thoát, lãng phí tài sản công, ngân sách. Tạo môi trường cạnh tranh công bằng, khuyến khích sản xuất – kinh doanh, thúc đẩy tăng trưởng.',
+          'Về xã hội: Hạn chế bất bình đẳng, bảo vệ quyền lợi chính đáng của nhân dân. Giữ gìn trật tự, kỷ cương, tăng cường công bằng xã hội.',
           // '📌 Kết luận: Chuyển hóa kiến thức lý thuyết thành công cụ ứng dụng, góp phần nâng cao nhận thức và trách nhiệm công dân.'
+        ]
+      }
+    },
+    {
+      type: 'spread' as const,
+      right: {
+        imageUrl: 'https://cdn2.fptshop.com.vn/unsafe/800x0/trach_nhiem_la_gi_3_d895c0ecdb.jpg',
+        caption: 'Sản phẩm không chỉ là công cụ giáo dục mà còn góp phần xây dựng xã hội công bằng.'
+      },
+      left: {
+        title: 'Giá trị thực tiễn của sản phẩm',
+        // subtitle: 'Chuyển hóa lý luận thành ứng dụng thực tiễn',
+        isList: true,
+        content: [
+          'Về văn hóa – đạo đức: Xây dựng lối sống lành mạnh, liêm chính, minh bạch.Bảo vệ và phát huy những giá trị đạo đức cách mạng, ngăn chặn suy thoái đạo đức, lối sống.',
+          'Về ý thức công dân: Giáo dục mỗi người có tinh thần trách nhiệm, biết tôn trọng pháp luật. Phát huy quyền giám sát, tố cáo, góp phần xây dựng xã hội dân chủ, văn minh',
         ]
       }
     },
@@ -185,7 +218,7 @@ const HeroSection = () => (
     <div className="absolute inset-0 bg-black opacity-30"></div>
     {/* <img src="https://file3.qdnd.vn/data/images/0/2021/12/26/tuanson/bo-sung-phat-trien-hoan-thien-chu-nghia-mac-lenin.jpg?dpi=150&quality=100&w=870" alt="Công lý" className="absolute inset-0 w-full h-full object-cover opacity-20" /> */}
     <div className="relative z-10 max-w-4xl mx-auto">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-4 tracking-tight text-white" style={{ textShadow: '3px 3px 6px rgba(0,0,0,0.8)' }}>Triết học Mác - Lênin qua lăng kính hiện đại</h1>
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-4 tracking-tight text-white" style={{ textShadow: '3px 3px 6px rgba(0,0,0,0.8)' }}>Chủ nghĩa xã hội khoa học</h1>
       <p className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto text-white px-4" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}>
         Khám phá nội dung "Phòng, chống tham nhũng và trách nhiệm của công dân" thông qua một ấn phẩm số trực quan.
       </p>
